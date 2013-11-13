@@ -22,30 +22,21 @@ namespace WebFormsLove.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl message;
         
         /// <summary>
-        /// firstName control.
+        /// addUserFormView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstName;
+        protected global::System.Web.UI.WebControls.FormView addUserFormView;
         
         /// <summary>
-        /// lastName control.
+        /// userSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastName;
-        
-        /// <summary>
-        /// telephoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox telephoneNumber;
+        protected global::WebFormsMvp.Web.PageDataSource userSource;
     }
 }

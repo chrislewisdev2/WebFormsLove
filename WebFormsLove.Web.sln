@@ -5,7 +5,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsLove.Web", "WebForm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsLove.Core", "WebFormsLove.Core\WebFormsLove.Core.csproj", "{2AB61D5D-F164-4607-862E-ADD7C2ED6310}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsLove.Core.UnitTests", "WebFormsLove.Core.UnitTests\WebFormsLove.Core.UnitTests.csproj", "{A2644E1E-8EE7-4225-B8E1-FBA4C191E600}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2388E32-5EE6-4EEC-9941-706FF693082F}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		WebFormsLove.Web.vsmdi = WebFormsLove.Web.vsmdi
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WebFormsLove.Web.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -19,6 +31,10 @@ Global
 		{2AB61D5D-F164-4607-862E-ADD7C2ED6310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB61D5D-F164-4607-862E-ADD7C2ED6310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB61D5D-F164-4607-862E-ADD7C2ED6310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2644E1E-8EE7-4225-B8E1-FBA4C191E600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2644E1E-8EE7-4225-B8E1-FBA4C191E600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2644E1E-8EE7-4225-B8E1-FBA4C191E600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2644E1E-8EE7-4225-B8E1-FBA4C191E600}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

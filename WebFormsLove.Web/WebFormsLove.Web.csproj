@@ -55,6 +55,12 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="WebFormsMvp">
+      <HintPath>..\..\..\Workspaces\Customer Portal\GlobalBinaries\3rdParty\Microsoft\WebFormsMVP\1.4.1.0\WebFormsMvp.dll</HintPath>
+    </Reference>
+    <Reference Include="WebFormsMvp.Unity">
+      <HintPath>..\..\..\Workspaces\Customer Portal\GlobalBinaries\3rdParty\Microsoft\WebFormsMVP\1.4.1.0\WebFormsMvp.Unity.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\ChangePassword.aspx" />
