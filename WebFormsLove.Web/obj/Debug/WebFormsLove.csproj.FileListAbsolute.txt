@@ -1,0 +1,7 @@
+C:\Sandbox\WebFormsLove\bin\WebFormsLove.dll
+C:\Sandbox\WebFormsLove\bin\WebFormsLove.pdb
+C:\Sandbox\WebFormsLove\obj\Debug\ResolveAssemblyReference.cache
+C:\Sandbox\WebFormsLove\obj\Debug\WebFormsLove.dll
+C:\Sandbox\WebFormsLove\obj\Debug\WebFormsLove.pdb
+C:\Sandbox\WebFormsLove\bin\WebFormsLove.Core.dll
+C:\Sandbox\WebFormsLove\bin\WebFormsLove.Core.pdb
