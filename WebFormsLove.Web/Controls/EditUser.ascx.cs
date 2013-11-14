@@ -14,6 +14,8 @@
     {
         public EditUser()
         {
+            //NOTE: this stops "double data-bind" problem. 
+            //See http://codecharm.com/Home/tabid/107/EntryId/56/WebFormsMvp-and-the-AutoDataBind-property.aspx
             AutoDataBind = false;
         }
 

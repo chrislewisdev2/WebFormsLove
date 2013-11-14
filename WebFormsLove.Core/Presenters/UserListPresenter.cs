@@ -7,12 +7,17 @@
     using WebFormsLove.Core.Views.Model;
     using WebFormsMvp;
 
+    /// <summary>
+    /// Handles listing of users
+    /// </summary>
     public class UserListPresenter : Presenter<IUserListView>
     {
         private readonly IUserRepository _repository;
 
         public UserListPresenter(IUserListView view, IUserRepository repository) : base(view)
         {
+            if (repository == null) throw new ArgumentNullException("repository");
+
             _repository = repository;
 
             view.Load += OnLoad;

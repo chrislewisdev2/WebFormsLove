@@ -8,6 +8,9 @@
     using WebFormsLove.Core.Views.Model;
     using WebFormsMvp;
 
+    /// <summary>
+    /// Handles editing of users
+    /// </summary>
     public class EditUserPresenter : Presenter<IEditUserView>
     {
         private readonly IUserRepository _repository;
@@ -21,6 +24,11 @@
             view.SelectingUser += OnSelectingUser;
         }
 
+        /// <summary>
+        /// Called when edit user form is submitted
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="WebFormsLove.Core.Views.EventArgs.UpdateEventArgs&lt;WebFormsLove.Core.Models.User&gt;"/> instance containing the event data.</param>
         private void OnUpdatingUser(object sender, UpdateEventArgs<User> e)
         {
             var sucess = _repository.Update(e.Updated);
@@ -32,6 +40,11 @@
             Messages.Publish(msg);
         }
 
+        /// <summary>
+        /// Called when edit user form is loaded
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="WebFormsLove.Core.Views.EventArgs.SelectEventArgs"/> instance containing the event data.</param>
         private void OnSelectingUser(object sender, SelectEventArgs e)
         {
             if (e.Id == Guid.Empty)

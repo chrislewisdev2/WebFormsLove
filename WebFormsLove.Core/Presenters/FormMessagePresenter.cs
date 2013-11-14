@@ -5,6 +5,10 @@
     using WebFormsLove.Core.Views.Model;
     using WebFormsMvp;
 
+    /// <summary>
+    /// Handles messages published by form presenters, to decouple 
+    /// form handling from reporting back to user
+    /// </summary>
     public class FormMessagePresenter : Presenter<IFormMessageView>
     {
         public FormMessagePresenter(IFormMessageView view) : base(view)

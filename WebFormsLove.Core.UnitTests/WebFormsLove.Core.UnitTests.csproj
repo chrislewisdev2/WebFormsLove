@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presenters\AddUserPresenterTest.cs" />
+    <Compile Include="Presenters\EditUserPresenterTest.cs" />
+    <Compile Include="Presenters\FormMessagePresenterTest.cs" />
+    <Compile Include="Presenters\UserListPresenterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
