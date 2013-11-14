@@ -68,9 +68,9 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="AddUser.aspx" />
-    <Content Include="AllUsers.aspx" />
     <Content Include="Controls\AddUser.ascx" />
     <Content Include="Controls\EditUser.ascx" />
+    <Content Include="Controls\FormMessage.ascx" />
     <Content Include="Controls\UserList.ascx" />
     <Content Include="EditUser.aspx" />
     <Content Include="Styles\Site.css" />
@@ -123,13 +123,6 @@
     <Compile Include="AddUser.aspx.designer.cs">
       <DependentUpon>AddUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AllUsers.aspx.cs">
-      <DependentUpon>AllUsers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AllUsers.aspx.designer.cs">
-      <DependentUpon>AllUsers.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Controls\AddUser.ascx.cs">
       <DependentUpon>AddUser.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,6 +136,13 @@
     </Compile>
     <Compile Include="Controls\EditUser.ascx.designer.cs">
       <DependentUpon>EditUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FormMessage.ascx.cs">
+      <DependentUpon>FormMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\FormMessage.ascx.designer.cs">
+      <DependentUpon>FormMessage.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserList.ascx.cs">
       <DependentUpon>UserList.ascx</DependentUpon>

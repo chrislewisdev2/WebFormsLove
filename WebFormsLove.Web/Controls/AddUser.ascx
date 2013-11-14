@@ -1,9 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddUser.ascx.cs" Inherits="WebFormsLove.Controls.AddUser" ClientIDMode="Static" ViewStateMode="Disabled" %>
 
-
-<p runat="server" id="message" class="msg"></p>
 <fieldset>
-    <legend>User details</legend>
+    <legend>Users details</legend>
 
     <asp:FormView ID="addUserFormView" runat="server" DefaultMode="Insert" DataSourceID="userSource" RenderOuterTable="False">
         <InsertItemTemplate>

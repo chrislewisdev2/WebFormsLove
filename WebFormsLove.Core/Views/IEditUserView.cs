@@ -6,8 +6,9 @@
     using WebFormsLove.Core.Views.Model;
     using WebFormsMvp;
 
-    public interface IAddUserView : IView<AddUserViewModel>
+    public interface IEditUserView : IView<EditUserViewModel>
     {
-        event EventHandler<AddEventArgs<User>> AddingUser;
+        event EventHandler<UpdateEventArgs<User>> UpdatingUser;
+        event EventHandler<SelectEventArgs> SelectingUser;
     }
 }

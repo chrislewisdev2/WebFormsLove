@@ -296,12 +296,20 @@ div.accountInfo
 .msg {
     font-weight: bold;
     font-size: 1.2em;
+    padding: 0.5em;
+    border-radius: 3px;
+    color: white;
+    background-color: #454545;
 }
 
 .msg--error {
-    color: red;
+    background-color: red;
 }
 
 .msg--success {
-    color: green;
+    background-color: green;
+}
+
+.msg p {
+    margin: 0;
 }

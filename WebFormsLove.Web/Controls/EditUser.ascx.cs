@@ -1,63 +1,47 @@
 ﻿namespace WebFormsLove.Controls
 {
     using System;
-    using System.Web.UI;
     using WebFormsLove.Core.Models;
-    using WebFormsLove.Core.Repositories;
-    using WebFormsLove.Helpers;
+    using WebFormsLove.Core.Presenters;
+    using WebFormsLove.Core.Views;
+    using WebFormsLove.Core.Views.EventArgs;
+    using WebFormsLove.Core.Views.Model;
+    using WebFormsMvp;
+    using WebFormsMvp.Web;
 
-    public partial class EditUser : UserControl
+    [PresenterBinding(typeof(EditUserPresenter))]
+    public partial class EditUser : MvpUserControl<EditUserViewModel>, IEditUserView
     {
-        private readonly IUserRepository _repo = new InMemoryUserRepository();
-
-        protected void Page_Load(object sender, EventArgs e)
+        public EditUser()
         {
-            if (IsPostBack) return;
-
-            string id = Request.QueryString["id"];
-            if (string.IsNullOrWhiteSpace(id))
-            {
-                message.InnerText = "No user selected";
-                message.AddClass("msg--error");
-                return;
-            }
-
-            Guid guidId;
-            if (!Guid.TryParse(id, out guidId))
-            {
-                message.InnerText = "No user selected";
-                message.AddClass("msg--error");
-            }
-
-            var user = _repo.Find(guidId);
-
-            firstName.Text = user.FirstName;
-            lastName.Text = user.LastName;
-            telephoneNumber.Text = user.TelephoneNumber;
-            userId.Value = user.Id.ToString();
+            AutoDataBind = false;
         }
 
-        protected void OnUserEdit(object sender, EventArgs e)
+        public User SelectUser(string id)
         {
-            var updated = new User
-                              {
-                                  FirstName = firstName.Text,
-                                  LastName = lastName.Text,
-                                  TelephoneNumber = telephoneNumber.Text,
-                                  Id = Guid.Parse(userId.Value)
-                              };
-
-            var success = _repo.Update(updated);
-            if(success)
+            if (SelectingUser != null)
             {
-                message.InnerText = "User updated";
-                message.AddClass("msg--success");
+                Guid userId;
+                Guid.TryParse(id, out userId);
+                SelectingUser(this, new SelectEventArgs {Id = userId});
             }
-            else
+
+            return Model.User;
+        }
+
+        public void UpdateUser(User originalUser, User user)
+        {
+            if (UpdatingUser != null)
             {
-                message.InnerText = "Update failed";
-                message.AddClass("msg--error");
+                UpdatingUser(this, new UpdateEventArgs<User> {Original = originalUser, Updated = user});
             }
         }
+
+        #region Implementation of IEditUserView
+
+        public event EventHandler<UpdateEventArgs<User>> UpdatingUser;
+        public event EventHandler<SelectEventArgs> SelectingUser;
+
+        #endregion
     }
 }

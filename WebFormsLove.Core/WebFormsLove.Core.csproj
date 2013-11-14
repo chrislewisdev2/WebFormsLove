@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,14 +49,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\ListExtensions.cs" />
+    <Compile Include="Messages\SimpleMessage.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Presenters\AddUserPresenter.cs" />
+    <Compile Include="Presenters\EditUserPresenter.cs" />
+    <Compile Include="Presenters\FormMessagePresenter.cs" />
+    <Compile Include="Presenters\UserListPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\InMemoryUserRepository.cs" />
+    <Compile Include="Views\EventArgs\AddEventArgs.cs" />
+    <Compile Include="Views\EventArgs\SelectEventArgs.cs" />
+    <Compile Include="Views\EventArgs\UpdateEventArgs.cs" />
     <Compile Include="Views\IAddUserView.cs" />
+    <Compile Include="Views\IEditUserView.cs" />
+    <Compile Include="Views\IFormMessageView.cs" />
+    <Compile Include="Views\IUserListView.cs" />
     <Compile Include="Views\Model\AddUserViewModel.cs" />
+    <Compile Include="Views\Model\EditUserViewModel.cs" />
+    <Compile Include="Views\Model\FormMessageModel.cs" />
     <Compile Include="Views\Model\FormResult.cs" />
+    <Compile Include="Views\Model\UserListViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

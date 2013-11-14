@@ -1,65 +1,33 @@
 ﻿namespace WebFormsLove.Controls
 {
     using System;
-    using System.Web.UI;
-    using System.Web.UI.WebControls;
+    using System.Collections.Generic;
     using WebFormsLove.Core.Models;
-    using WebFormsLove.Core.Repositories;
-    using WebFormsLove.Helpers;
+    using WebFormsLove.Core.Presenters;
+    using WebFormsLove.Core.Views;
+    using WebFormsLove.Core.Views.EventArgs;
+    using WebFormsLove.Core.Views.Model;
+    using WebFormsMvp;
+    using WebFormsMvp.Web;
 
-    public partial class UserList : UserControl
+    [PresenterBinding(typeof (UserListPresenter))]
+    public partial class UserList : MvpUserControl<UserListViewModel>, IUserListView
     {
-        private readonly IUserRepository _repo = new InMemoryUserRepository();
-
-        protected void Page_Load(object sender, EventArgs e)
+        public IList<User> SelectUsers()
         {
-            if (IsPostBack) return;
-
-            BindData();
-
+            return Model.Users;
         }
 
-        protected void OnUserBound(object sender, ListViewItemEventArgs e)
+        public void DeleteUser(Guid id)
         {
-            var lvi = e.Item;
-            if (lvi.ItemType != ListViewItemType.DataItem) return;
-
-            var user = lvi.DataItem as User;
-            if (user == null) return;
-
-            lvi.FindBind<Literal>("firstName", x => x.Text = user.FirstName);
-            lvi.FindBind<Literal>("lastName", x => x.Text = user.LastName);
-            lvi.FindBind<Literal>("TelephoneNumber", x => x.Text = user.TelephoneNumber);
+            if (DeletingUser != null)
+                DeletingUser(this, new SelectEventArgs {Id = id});
         }
 
-        protected void DeleteUser(string rawId)
-        {
-            var id = Guid.Parse(rawId);
-            var success = _repo.Delete(id);
+        #region Implementation of IUserListView
 
-            if (success)
-            {
-                message.InnerText = "User deleted";
-                message.AddClass("msg--success");
-            }
-            else
-            {
-                message.InnerText = "Something went wrong :(";
-                message.AddClass("msg--error");
-            }
+        public event EventHandler<SelectEventArgs> DeletingUser;
 
-            BindData();
-        }
-
-        protected void HandleCommand(object sender, ListViewCommandEventArgs e)
-        {
-            DeleteUser((string) e.CommandArgument);
-        }
-
-        private void BindData()
-        {
-            userList.DataSource = _repo.All();
-            userList.DataBind();
-        }
+        #endregion
     }
 }

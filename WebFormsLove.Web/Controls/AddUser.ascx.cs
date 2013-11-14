@@ -4,39 +4,30 @@
     using WebFormsLove.Core.Models;
     using WebFormsLove.Core.Presenters;
     using WebFormsLove.Core.Views;
+    using WebFormsLove.Core.Views.EventArgs;
     using WebFormsLove.Core.Views.Model;
-    using WebFormsLove.Helpers;
     using WebFormsMvp;
     using WebFormsMvp.Web;
 
     [PresenterBinding(typeof (AddUserPresenter))]
     public partial class AddUser : MvpUserControl<AddUserViewModel>, IAddUserView
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public AddUser()
         {
+            AutoDataBind = false;
         }
-
-        //TODO: find out why this is needed
-        public User SelectUser()
-        {
-            return new User();
-        }
-
 
         public void CreateUser(User user)
         {
-            if (AddingUser == null) return;
-
-            AddingUser(this, new AddUserEventArgs {User = user});
-
-            //TODO: refactor into own presenter etc
-            message.AddClass(Model.Result == FormResult.Success ? "msg--success" : "msg--error");
-            message.InnerText = Model.Message;
+            if (AddingUser != null)
+            {
+                AddingUser(this, new AddEventArgs<User> {Item = user});
+            }
         }
 
         #region Implementation of IAddUserView
 
-        public event EventHandler<AddUserEventArgs> AddingUser;
+        public event EventHandler<AddEventArgs<User>> AddingUser;
 
         #endregion
     }

@@ -1,8 +1,10 @@
 ﻿namespace WebFormsLove.Core.Presenters
 {
     using System;
+    using WebFormsLove.Core.Models;
     using WebFormsLove.Core.Repositories;
     using WebFormsLove.Core.Views;
+    using WebFormsLove.Core.Views.EventArgs;
     using WebFormsLove.Core.Views.Model;
     using WebFormsMvp;
 
@@ -23,20 +25,15 @@
         }
 
 
-        private void OnAddingUser(object sender, AddUserEventArgs e)
+        private void OnAddingUser(object sender, AddEventArgs<User> e)
         {
-            var success = _repository.Add(e.User);
+            var success = _repository.Add(e.Item);
 
-            if(success)
-            {
-                View.Model.Result = FormResult.Success;
-                View.Model.Message = "User added";
-            }
-            else
-            {
-                View.Model.Result = FormResult.Error;
-                View.Model.Message = "Failed to add user";
-            }
+            var msg = success 
+                ? FormMessageModel.Success("User added") 
+                : FormMessageModel.Error("User add failed");
+
+            Messages.Publish(msg);
         }
     }
 }
