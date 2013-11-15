@@ -73,6 +73,8 @@
     <Content Include="Controls\FormMessage.ascx" />
     <Content Include="Controls\UserList.ascx" />
     <Content Include="EditUser.aspx" />
+    <Content Include="Scripts\jquery.validate-1.11.1.js" />
+    <Content Include="Scripts\validation.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

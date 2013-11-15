@@ -32,9 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Workspaces\Customer Portal\GlobalBinaries\3rdParty\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +64,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\InMemoryUserRepository.cs" />
+    <Compile Include="Validation\ClientValidationHelpers.cs" />
+    <Compile Include="Validation\ControlExtensions.cs" />
+    <Compile Include="Validation\DataAnnotationsValidator.cs" />
+    <Compile Include="Validation\IClientSideValidator.cs" />
+    <Compile Include="Validation\MetadataSource.cs" />
+    <Compile Include="Validation\RegularExpressionAttribute.cs" />
+    <Compile Include="Validation\RequiredAttribute.cs" />
     <Compile Include="Views\EventArgs\AddEventArgs.cs" />
     <Compile Include="Views\EventArgs\SelectEventArgs.cs" />
     <Compile Include="Views\EventArgs\UpdateEventArgs.cs" />
@@ -71,7 +84,9 @@
     <Compile Include="Views\Model\FormResult.cs" />
     <Compile Include="Views\Model\UserListViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
