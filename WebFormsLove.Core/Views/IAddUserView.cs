@@ -8,6 +8,8 @@
 
     public interface IAddUserView : IView<AddUserViewModel>
     {
+        void CreateUser(User user);
+
         event EventHandler<AddEventArgs<User>> AddingUser;
     }
 }

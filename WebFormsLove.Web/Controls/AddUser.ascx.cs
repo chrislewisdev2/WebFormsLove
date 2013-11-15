@@ -15,7 +15,10 @@
         public AddUser()
         {
             AutoDataBind = false;
+
         }
+
+        #region Implementation of IAddUserView
 
         public void CreateUser(User user)
         {
@@ -24,8 +27,6 @@
                 AddingUser(this, new AddEventArgs<User> {Item = user});
             }
         }
-
-        #region Implementation of IAddUserView
 
         public event EventHandler<AddEventArgs<User>> AddingUser;
 

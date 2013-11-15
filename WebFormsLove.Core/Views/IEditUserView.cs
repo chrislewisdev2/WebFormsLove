@@ -8,6 +8,9 @@
 
     public interface IEditUserView : IView<EditUserViewModel>
     {
+        User SelectUser(string id);
+        void UpdateUser(User originalUser, User user);
+
         event EventHandler<UpdateEventArgs<User>> UpdatingUser;
         event EventHandler<SelectEventArgs> SelectingUser;
     }

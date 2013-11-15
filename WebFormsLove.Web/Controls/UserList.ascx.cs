@@ -13,6 +13,8 @@
     [PresenterBinding(typeof (UserListPresenter))]
     public partial class UserList : MvpUserControl<UserListViewModel>, IUserListView
     {
+        #region Implementation of IUserListView
+
         public IList<User> SelectUsers()
         {
             return Model.Users;
@@ -21,10 +23,8 @@
         public void DeleteUser(Guid id)
         {
             if (DeletingUser != null)
-                DeletingUser(this, new SelectEventArgs {Id = id});
+                DeletingUser(this, new SelectEventArgs { Id = id });
         }
-
-        #region Implementation of IUserListView
 
         public event EventHandler<SelectEventArgs> DeletingUser;
 

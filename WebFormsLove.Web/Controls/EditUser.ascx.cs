@@ -19,13 +19,15 @@
             AutoDataBind = false;
         }
 
+        #region Implementation of IEditUserView
+
         public User SelectUser(string id)
         {
             if (SelectingUser != null)
             {
                 Guid userId;
                 Guid.TryParse(id, out userId);
-                SelectingUser(this, new SelectEventArgs {Id = userId});
+                SelectingUser(this, new SelectEventArgs { Id = userId });
             }
 
             return Model.User;
@@ -35,11 +37,9 @@
         {
             if (UpdatingUser != null)
             {
-                UpdatingUser(this, new UpdateEventArgs<User> {Original = originalUser, Updated = user});
+                UpdatingUser(this, new UpdateEventArgs<User> { Original = originalUser, Updated = user });
             }
         }
-
-        #region Implementation of IEditUserView
 
         public event EventHandler<UpdateEventArgs<User>> UpdatingUser;
         public event EventHandler<SelectEventArgs> SelectingUser;
