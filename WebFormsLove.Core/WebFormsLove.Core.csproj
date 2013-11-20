@@ -78,7 +78,6 @@
     <Compile Include="Views\IEditUserView.cs" />
     <Compile Include="Views\IFormMessageView.cs" />
     <Compile Include="Views\IUserListView.cs" />
-    <Compile Include="Views\Model\AddUserViewModel.cs" />
     <Compile Include="Views\Model\EditUserViewModel.cs" />
     <Compile Include="Views\Model\FormMessageModel.cs" />
     <Compile Include="Views\Model\FormResult.cs" />

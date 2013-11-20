@@ -5,17 +5,15 @@
     using WebFormsLove.Core.Presenters;
     using WebFormsLove.Core.Views;
     using WebFormsLove.Core.Views.EventArgs;
-    using WebFormsLove.Core.Views.Model;
     using WebFormsMvp;
     using WebFormsMvp.Web;
 
     [PresenterBinding(typeof (AddUserPresenter))]
-    public partial class AddUser : MvpUserControl<AddUserViewModel>, IAddUserView
+    public partial class AddUser : MvpUserControl, IAddUserView
     {
         public AddUser()
         {
             AutoDataBind = false;
-
         }
 
         #region Implementation of IAddUserView

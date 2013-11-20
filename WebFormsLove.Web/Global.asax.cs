@@ -12,7 +12,7 @@
     {
         private void Application_Start(object sender, EventArgs e)
         {
-            UnityContainer unityContainer = ConfigureUnityContainer();
+            var unityContainer = ConfigureUnityContainer();
             PresenterBinder.Factory = new UnityPresenterFactory(unityContainer);
         }
 

@@ -22,7 +22,7 @@
 
 
         /// <summary>
-        /// Called when add user form is submitted
+        /// Called when the user submits the form on the view
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="WebFormsLove.Core.Views.EventArgs.AddEventArgs&lt;WebFormsLove.Core.Models.User&gt;"/> instance containing the event data.</param>

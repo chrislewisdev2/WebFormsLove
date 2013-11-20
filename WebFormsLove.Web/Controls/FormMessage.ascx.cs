@@ -11,10 +11,6 @@
     [PresenterBinding(typeof(FormMessagePresenter))]
     public partial class FormMessage : MvpUserControl<FormMessageModel>, IFormMessageView
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
-
         protected override void OnPreRender(EventArgs e)
         {
             base.OnPreRender(e);
