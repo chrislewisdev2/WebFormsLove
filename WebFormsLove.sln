@@ -1,18 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2388E32-5EE6-4EEC-9941-706FF693082F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsLove.Web", "WebFormsLove.Web\WebFormsLove.Web.csproj", "{F5224359-59BF-490D-94A7-5EEBE31DA59C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsLove.Core", "WebFormsLove.Core\WebFormsLove.Core.csproj", "{2AB61D5D-F164-4607-862E-ADD7C2ED6310}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsLove.Core.UnitTests", "WebFormsLove.Core.UnitTests\WebFormsLove.Core.UnitTests.csproj", "{A2644E1E-8EE7-4225-B8E1-FBA4C191E600}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B2388E32-5EE6-4EEC-9941-706FF693082F}"
-EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = WebFormsLove1.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -33,5 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = WebFormsLove1.vsmdi
 	EndGlobalSection
 EndGlobal
